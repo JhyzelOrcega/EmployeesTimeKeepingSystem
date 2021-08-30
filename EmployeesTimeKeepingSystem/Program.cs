@@ -15,7 +15,6 @@ namespace EmployeesTimeKeepingSystem
 
             int loginAttempts = 0;
 
-            //Simple iteration upto three times
             for (int i = 0; i < 3; i++)
             {
                 Console.Write("Enter username:");
@@ -29,7 +28,7 @@ namespace EmployeesTimeKeepingSystem
                     break;
             }
 
-            //Display the result
+           
             if (loginAttempts > 2)
                 Console.WriteLine("Login failure");
             else
