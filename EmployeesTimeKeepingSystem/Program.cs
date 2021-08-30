@@ -12,25 +12,49 @@ namespace EmployeesTimeKeepingSystem
     {
         static void Main(string[] args)
         {
-     
+
+            int loginAttempts = 0;
+
+            //Simple iteration upto three times
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Enter username:");
+                string username = Console.ReadLine();
+                Console.Write("Enter password:");
+                string password = Console.ReadLine();
+
+                if (username != "admin0" || password != "admin0")
+                    loginAttempts++;
+                else
+                    break;
+            }
+
+            //Display the result
+            if (loginAttempts > 2)
+                Console.WriteLine("Login failure");
+            else
+                Console.WriteLine("Login successful");
+
+            Console.ReadKey();
+
             // var date01 = new DateTime (2021, 8, 21, 13, 9, 52);
             //  Console.WriteLine(date01);
 
 
-              var date02 = DateTime.Now;
-        Console.WriteLine(date02.ToLongDateString());
+            var date02 = DateTime.Now;
+            Console.WriteLine(date02.ToLongDateString());
             Console.WriteLine("\n");
-            
+
 
             Console.WriteLine("                                             EMPLOYEES IDENTIFICATION DATA                   ");
             //Console.ReadKey();
             //string em  = Console.ReadLine();
 
-           
 
-         Console.Write("\nEnter Employee ID: ");
+
+            Console.Write("\nEnter Employee ID: ");
             string nums = Console.ReadLine();
-           double price = Convert.ToDouble(nums);
+            double price = Convert.ToDouble(nums);
 
 
 
@@ -54,14 +78,14 @@ namespace EmployeesTimeKeepingSystem
 
             Console.WriteLine("\n                                                   Employee ID: " + nums);
 
-             
+
             Console.WriteLine("\n                                                   Employee Last Name: " + last);
 
 
             Console.WriteLine("\n                                                   Employee First Name: " + first);
 
 
-            Console.WriteLine ("\n                                                   Employee Department: " + depart);
+            Console.WriteLine("\n                                                   Employee Department: " + depart);
 
             //Console.ReadKey();
             Console.WriteLine();
@@ -71,7 +95,7 @@ namespace EmployeesTimeKeepingSystem
             string timeout = Console.ReadLine();
             Console.WriteLine();
 
-      
+
             string[] data = { "Time In :" + timein, "Time Out:" + timeout };
 
             foreach (string i in data)
@@ -95,63 +119,62 @@ namespace EmployeesTimeKeepingSystem
                 {
                     Console.Write("Are you want to SEARCH ?? [y/n] ");
                     response = Console.ReadKey(false).Key;   // true is intercept key (dont show), false is show
-                    if (response != ConsoleKey.End )
+                    if (response != ConsoleKey.End)
                         Console.WriteLine();
 
-                    
+
                 } while (response != ConsoleKey.Y && response != ConsoleKey.N);
 
                 confirmed = response == ConsoleKey.Y;
             } while (!confirmed);
             Console.WriteLine("", Key);
 
+            string[] employeesss = { "Castillo", "Blanco", "Aganan", "Asijan" };
 
-            string[] employeesss = {"Castillo", "Blanco", "Aganan", "Asijan" };
-           
             Console.Write("\n                                                Enter Employees LAST Name: ");
             string empname = Console.ReadLine();
 
             bool contains = false;
 
-                for (int i = 0; i < employeesss.Length; i++)
+            for (int i = 0; i < employeesss.Length; i++)
             {
 
-                      if (empname  == employeesss [i])
+                if (empname == employeesss[i])
                 {
 
                     contains = true;
-                      Console.WriteLine("\n                                                The Employee Have Schedule Today!!");
+                    Console.WriteLine("\n                                                The Employee Have Schedule Today!!");
 
                 }
 
                 else
                 {
-                    
+
 
                 }
 
             }
 
-                if (contains ==true)
+            if (contains == true)
 
             {
 
-               // Console.WriteLine("                           The Employee Have Schedule Today !!!!!!!!!!");
+                // Console.WriteLine("                           The Employee Have Schedule Today !!!!!!!!!!");
 
             }
-          
-                else
+
+            else
             {
-                
+
                 Console.WriteLine("\n                                            The Employee is NOT scheduled TODAY!!");
 
             }
 
-          
+
             Console.WriteLine();
             Console.WriteLine();
 
-             
+
             Console.WriteLine("                                                 WARNING : List of Morning Shift !!");
 
             //List<string> employees; employees = new List<string>();
@@ -163,7 +186,7 @@ namespace EmployeesTimeKeepingSystem
             employees.Add("\n                                                           Ariel");
             employees.Add("\n                                                           Nherjohn");
 
-           
+
 
             var employeess = new List<string>() { "Jhyzel", "Joan", "Liezl", "Jhona", "Ariel", "Nherjohn" };
             Console.WriteLine(employees[0]);
@@ -173,9 +196,9 @@ namespace EmployeesTimeKeepingSystem
             Console.WriteLine(employees[4]);
             Console.WriteLine(employees[5]);
 
-       Console.WriteLine("\n                                                  WARNING : List of Night Shift !!");
+            Console.WriteLine("\n                                                  WARNING : List of Night Shift !!");
 
-            
+
             var applicant = new List<string>();
             applicant.Add("\n                                                           Aliyah");
             applicant.Add("\n                                                           Hannah");
@@ -196,9 +219,12 @@ namespace EmployeesTimeKeepingSystem
             Console.WriteLine();
         }
 
-       
+
+        private static void Pause()
+        {
 
         }
+    }
 
     }
 
